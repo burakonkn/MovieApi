@@ -6,6 +6,8 @@
   <Folder Name="/Infrastructure/">
     <Project Path="Infrastructure/MovieApi.Persistence/MovieApi.Persistence.csproj" />
   </Folder>
-  <Folder Name="/Presentation/" />
+  <Folder Name="/Presentation/">
+    <Project Path="Presentation/MovieApi.WebAPI/MovieApi.WebAPI.csproj" />
+  </Folder>
   <Folder Name="/Requirements/" />
 </Solution>

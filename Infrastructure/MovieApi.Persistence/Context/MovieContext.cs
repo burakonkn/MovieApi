@@ -15,11 +15,6 @@ namespace MovieApi.Persistence.Context
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=MovieApiDB;Trusted_Connection=True;TrustServerCertificate=True;");
-        }
-
         public DbSet<Cast> Casts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Movie> Movies { get; set; }
