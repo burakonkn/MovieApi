@@ -3,7 +3,9 @@
     <Project Path="Core/MovieApi.Domain/MovieApi.Domain.csproj" />
   </Folder>
   <Folder Name="/Frontends/" />
-  <Folder Name="/Infrastructure/" />
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/MovieApi.Persistence/MovieApi.Persistence.csproj" />
+  </Folder>
   <Folder Name="/Presentation/" />
   <Folder Name="/Requirements/" />
 </Solution>
