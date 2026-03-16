@@ -9,6 +9,8 @@ builder.Services.AddDbContext<MovieContext>(options => {
     options.UseSqlServer(connectionString);
 });
 
+
+
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
