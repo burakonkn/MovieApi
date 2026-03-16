@@ -22,7 +22,7 @@ builder.Services.AddScoped<GetMovieQueryHandler>();
 builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
-builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateMovieCommandHandler>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
