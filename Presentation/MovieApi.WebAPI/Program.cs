@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
 using MovieApi.Persistence.Context;
@@ -24,15 +25,22 @@ builder.Services.AddScoped<RemoveMovieCommandHandler>();
 builder.Services.AddScoped<UpdateCategoryCommandHandler>();
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(x =>
+{
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "My Api", Version = "v1" });
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(x =>
+    {
+        x.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1");
+    });
 }
 
 app.UseHttpsRedirection();
