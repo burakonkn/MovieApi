@@ -8,6 +8,11 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Queries.MovieQueries
 {
     public class GetMovieByIdQuery
     {
+        public GetMovieByIdQuery(Guid id)
+        {
+            Id = id;
+        }
         public Guid Id { get; set; }
+
     }
 }

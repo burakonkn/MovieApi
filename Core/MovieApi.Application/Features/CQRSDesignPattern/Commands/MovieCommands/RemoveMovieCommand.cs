@@ -8,6 +8,11 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands
 {
     public class RemoveMovieCommand
     {
+        public RemoveMovieCommand(Guid id)
+        {
+            Id = id;
+        }
+
         public Guid Id { get; set; }
     }
 }

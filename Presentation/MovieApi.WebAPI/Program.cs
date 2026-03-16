@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
 using MovieApi.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,17 @@ builder.Services.AddDbContext<MovieContext>(options => {
     options.UseSqlServer(connectionString);
 });
 
+builder.Services.AddScoped<GetCategoryQueryHandler>();
+builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+builder.Services.AddScoped<CreateCategoryCommandHandler>();
+builder.Services.AddScoped<RemoveCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
 
+builder.Services.AddScoped<GetMovieQueryHandler>();
+builder.Services.AddScoped<GetMovieByIdQueryHandler>();
+builder.Services.AddScoped<CreateMovieCommandHandler>();
+builder.Services.AddScoped<RemoveMovieCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
